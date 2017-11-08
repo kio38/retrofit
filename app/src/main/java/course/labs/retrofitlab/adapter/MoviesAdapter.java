@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,20 +13,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.app.Activity;
-import java.io.IOException;
+
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import course.labs.retrofitlab.R;
-import course.labs.retrofitlab.activity.MainActivity;
-import course.labs.retrofitlab.activity.SecondActivity;
 import course.labs.retrofitlab.model.Movie;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
 
@@ -110,9 +101,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             public void onClick(View v) {
                 Movie movie = movies.get(position);
                 Integer id = movie.getId();
-                Intent intent = new Intent(v.getContext(),SecondActivity.class);
-                intent.putExtra("id", id.toString());
-                v.getContext().startActivity(intent);
+
             }
         });
 
